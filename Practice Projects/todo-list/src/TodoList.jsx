@@ -5,12 +5,14 @@ const TodoList = () => {
   const [todoList, setTodoList] = useState([])
 
   const handleAddBtn = () => {
+    const trimmedTodo = todoItem.trim()
+
     setTodoList((prev) => {
       const isExist = prev.some(
-        (item) => item.description.trim().toLowerCase() === todoItem.trim().toLocaleLowerCase()
+        (item) => item.description.trim().toLowerCase() === trimmedTodo.toLowerCase()
       )
 
-      if (isExist || todoItem === '') {
+      if (isExist || trimmedTodo === '') {
         return prev
       }
 
@@ -18,7 +20,7 @@ const TodoList = () => {
         ...prev,
         {
           id: Date.now(),
-          description: todoItem.trim(),
+          description: trimmedTodo,
         },
       ]
     })
@@ -31,7 +33,13 @@ const TodoList = () => {
 
   return (
     <div className="todo-container">
-      <div className="add-todo-section">
+      <form
+        className="add-todo-section"
+        onSubmit={(e) => {
+          e.preventDefault()
+          handleAddBtn()
+        }}
+      >
         <input
           type="text"
           name="input-todo"
@@ -40,23 +48,23 @@ const TodoList = () => {
           value={todoItem}
           onChange={(e) => setTodoItem(e.target.value)}
         />
-        <button id="add-todo-btn" onClick={handleAddBtn}>
+        <button type="submit" id="add-todo-btn">
           Add todo
         </button>
-      </div>
+      </form>
 
-      <div className="todo-item-section">
+      <ol className="todo-item-section">
         {todoList.map((todo) => {
           return (
-            <div className="todo" key={todo.id}>
+            <li className="todo" key={todo.id}>
               <p className="todo-name">{todo.description}</p>
               <span className="todo-delete-btn" onClick={() => handleRemoveBtn(todo.id)}>
                 ❌
               </span>
-            </div>
+            </li>
           )
         })}
-      </div>
+      </ol>
     </div>
   )
 }
