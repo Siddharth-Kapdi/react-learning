@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --black: #0a0a0a;
+  --card: #171717;
+  --popular-card: #14532d;
+
+  --green: #22c55e;
+  --green-hover: #16a34a;
+
+  --heading: #ffffff;
+  --text-secondary: #a3a3a3;
+  --border: #262626;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: var(--black);
+  color: var(--heading);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading);
+}
+
+.container {
+  width: min(100% - 4rem, 120rem);
+  margin: 0 auto;
+}
+
+.card-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+}
+
+.price-card {
+  width: 80%;
+  height: 65vh;
+  border: .3rem solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  background-color: var(--card);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+
+  &:hover {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
+  }
+}
+
+.badge-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.basic-info {
+  text-align: center;
+}
+
+.plan-name {
+  font-size: 4rem;
+}
+
+.price {
+  font-size: 3.5rem;
+}
+
+button {
+  padding: .5rem 1.5rem;
+  cursor: pointer;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.popular-badge {
+  background-color: var(--green);
+  padding: .1rem .4rem;
+  border-radius: 1rem;
+}
+
+.discount-badge {
+  background-color: var(--text-secondary);
+  padding: .1rem .4rem;
+  border-radius: 1rem;
+}
