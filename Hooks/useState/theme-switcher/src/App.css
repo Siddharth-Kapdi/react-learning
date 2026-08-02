@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* .container {
+  width: min(100% - 4rem, 120rem);
+  margin: 0 auto;
+} */
+
+
+
+.dark {
+  background-color: #000;
+  color: white;
+}
+
+
+
+button {
+  padding: .5rem 3rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.theme-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: #1E1F21;
+  color: white;
+}
+
+.light {
+  background-color: #DDDEE1;
+  color: #000;
+}
