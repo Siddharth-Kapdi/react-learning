@@ -22,11 +22,12 @@ body {
 .container {
   width: min(100% - 4rem, 120rem);
   margin: 0 auto;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 3rem;
 }
 
 .counter-component {
@@ -76,4 +77,68 @@ button {
   border: none;
   border-radius: 2rem;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .counter-component {
+    width: 100%;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .counter {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .step-change {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  input {
+    width: 100%;
+    max-width: 30rem;
+    height: 3.8rem;
+  }
+
+  .btns {
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  button {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .counter-component {
+    padding: 1.5rem;
+  }
+
+  .counter {
+    font-size: 2rem;
+  }
+
+  .btns {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
 }

@@ -3,11 +3,14 @@ import { useState } from 'react'
 const Counter = () => {
   const [count, setCount] = useState(0)
   const [stepCount, setStepCount] = useState(0)
+  const [stepHistory, setStepHistory] = useState([])
   const MIN_VALUE = 1
   const MAX_VALUE = 100
 
   const handleIncrement = () => {
     setCount((prev) => prev + stepCount)
+    // if (stepHistory.includes(stepCount)) return
+    setStepHistory([...stepHistory, stepCount])
   }
 
   const handleDecrement = () => {
@@ -26,7 +29,7 @@ const Counter = () => {
     <div className="counter-component">
       <h1>Smart Counter</h1>
       <p className="counter">{count}</p>
-      <form className="step-change">
+      <div className="step-change">
         <label htmlFor="step">Step: </label>
         <input
           id="step"
@@ -34,18 +37,31 @@ const Counter = () => {
           min={MIN_VALUE}
           max={MAX_VALUE}
           value={stepCount}
-          onChange={(e) => handleStepCount(e)}
+          onChange={(e) => {
+            handleStepCount(e)
+          }}
         />
-      </form>
+      </div>
       <div className="btns">
-        <button onClick={handleIncrement} disabled={count >= 100 ? true : false}>
+        <button onClick={handleIncrement} disabled={count >= 100}>
           Increment
         </button>
-        <button onClick={handleDecrement} disabled={count <= 0 ? true : false}>
+        <button onClick={handleDecrement} disabled={count <= 0}>
           Decrement
         </button>
         <button onClick={handleReset}>Reset</button>
       </div>
+
+      {stepHistory.length > 0 && (
+        <>
+          <h3>Inputs history:</h3>
+          <ol className="step-history">
+            {stepHistory.map((history, index) => (
+              <li key={`${history}-${index}`}>{history}</li>
+            ))}
+          </ol>
+        </>
+      )}
     </div>
   )
 }
