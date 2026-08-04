@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #171717;
+}
+
+.container {
+  width: min(100% - 4rem, 120rem);
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: #fff;
+  padding: 2rem 4rem;
+  border-radius: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+
+input,
+.submit-btn {
+  margin-bottom: 2rem;
+  height: 3rem;
+  font-size: 1.8rem;
+  padding: .3rem 1rem;
+}
+
+input {
+  background-color: #e7e5e5;
+  border: none;
+  border-radius: .4rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.submit-btn {
+  background-color: #4597da;
+  border: none;
+  border-radius: .4rem;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
