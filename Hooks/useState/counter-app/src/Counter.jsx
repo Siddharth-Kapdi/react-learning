@@ -8,17 +8,18 @@ const Counter = () => {
   const MAX_VALUE = 100
 
   const handleIncrement = () => {
-    setCount((prev) => prev + stepCount)
+    setCount((prev) => Math.min(prev + stepCount, MAX_VALUE))
     // if (stepHistory.includes(stepCount)) return
     setStepHistory([...stepHistory, stepCount])
   }
 
   const handleDecrement = () => {
-    setCount((prev) => prev - stepCount)
+    setCount((prev) => Math.max(prev - stepCount, MIN_VALUE))
   }
 
   const handleReset = () => {
-    setCount(0)
+    setCount(MIN_VALUE)
+    setStepHistory([])
   }
 
   const handleStepCount = (e) => {
@@ -32,6 +33,7 @@ const Counter = () => {
       <div className="step-change">
         <label htmlFor="step">Step: </label>
         <input
+          type="number"
           id="step"
           name="step"
           min={MIN_VALUE}
@@ -43,10 +45,10 @@ const Counter = () => {
         />
       </div>
       <div className="btns">
-        <button onClick={handleIncrement} disabled={count >= 100}>
+        <button onClick={handleIncrement} disabled={count + stepCount > 100}>
           Increment
         </button>
-        <button onClick={handleDecrement} disabled={count <= 0}>
+        <button onClick={handleDecrement} disabled={count - stepCount <= 0}>
           Decrement
         </button>
         <button onClick={handleReset}>Reset</button>
