@@ -4,10 +4,17 @@ const UseEffectPractice = () => {
   const [count, setCount] = useState(0)
   const [name, setName] = useState('')
 
+  console.log('component rendering') // fires on EVERY render, always
+
   useEffect(() => {
-    document.title = `count: ${count}`
-    console.log(`Name: ${name}`)
-  }, [count, name])
+    console.log('initial render')
+  }, [])
+
+  useEffect(() => {
+    document.title = `count ${count}`
+    console.log('effect ran (mount or count changed)')
+  }, [count])
+
   return (
     <div className="child-container">
       <h1>useEffect Practice</h1>
