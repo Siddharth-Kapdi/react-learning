@@ -28,6 +28,10 @@ const RegistrationForm = () => {
     setStepCount((prev) => (prev < 4 ? prev + 1 : prev))
   }
 
+  const handlePreviousBtn = () => {
+    setStepCount((prev) => (prev > 1 ? prev - 1 : prev))
+  }
+
   const handleFormSubmit = (e) => {
     e.preventDefault()
     console.log(formData)
@@ -52,6 +56,9 @@ const RegistrationForm = () => {
       {stepCount === 2 && <StepContact formData={formData} handleChange={handleChange} />}
       {stepCount === 3 && <StepLogin formData={formData} handleChange={handleChange} />}
       {stepCount === 4 && <StepReview formData={formData} />}
+      <button type="button" onClick={handlePreviousBtn}>
+        Previous
+      </button>
       <button className="next-submit-btn" type="button" onClick={handleButtonClick}>
         {stepCount === 4 ? 'Submit' : 'Next'}
       </button>
