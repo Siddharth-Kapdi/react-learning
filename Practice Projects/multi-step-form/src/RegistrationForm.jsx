@@ -16,22 +16,38 @@ const RegistrationForm = () => {
     password: '',
   })
 
+  // Input change function
   const handleChange = (e) => {
     const { name, value } = e.target
+
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
+  // Button click function (if there is "Next" step or "Submit") handler
   const handleButtonClick = (e) => {
     if (stepCount === 4) {
       return handleFormSubmit(e)
+    } else {
+      nextCount(e)
+    }
+  }
+
+  // Next count incremental function
+  const nextCount = (e) => {
+    const form = e.target.form
+    if (!form.checkValidity()) {
+      form.reportValidity()
+      return
     }
     setStepCount((prev) => (prev < 4 ? prev + 1 : prev))
   }
 
-  const handlePreviousBtn = () => {
+  // Previous count decremental function
+  const previousCount = () => {
     setStepCount((prev) => (prev > 1 ? prev - 1 : prev))
   }
 
+  // form submit handler function
   const handleFormSubmit = (e) => {
     e.preventDefault()
     console.log(formData)
@@ -56,7 +72,7 @@ const RegistrationForm = () => {
       {stepCount === 2 && <StepContact formData={formData} handleChange={handleChange} />}
       {stepCount === 3 && <StepLogin formData={formData} handleChange={handleChange} />}
       {stepCount === 4 && <StepReview formData={formData} />}
-      <button type="button" onClick={handlePreviousBtn}>
+      <button type="button" onClick={previousCount}>
         Previous
       </button>
       <button className="next-submit-btn" type="button" onClick={handleButtonClick}>

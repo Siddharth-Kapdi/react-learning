@@ -10,7 +10,7 @@ const StepContact = ({ formData, handleChange }) => {
         id="email"
         required
         autoComplete="off"
-        placeholder="Enter email..."
+        placeholder="e.g. john.doe@example.com"
         value={email}
         onChange={handleChange}
       />
@@ -21,7 +21,9 @@ const StepContact = ({ formData, handleChange }) => {
         id="phone"
         required
         autoComplete="off"
-        placeholder="Enter phone number..."
+        pattern="\d{10}"
+        title="Phone number must be exactly 10 digits"
+        placeholder="e.g. 9876543210"
         value={phone}
         onChange={handleChange}
       />

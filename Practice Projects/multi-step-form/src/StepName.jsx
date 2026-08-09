@@ -10,10 +10,13 @@ const StepName = ({ formData, handleChange }) => {
         id="firstName"
         required
         autoComplete="off"
-        placeholder="Enter first name..."
+        pattern="[A-Za-z]{2,}"
+        title="Letters only, minimum 2 characters"
+        placeholder="e.g. John"
         value={firstName}
         onChange={handleChange}
       />
+
       <label htmlFor="lastName">Last Name</label>
       <input
         type="text"
@@ -21,7 +24,9 @@ const StepName = ({ formData, handleChange }) => {
         id="lastName"
         required
         autoComplete="off"
-        placeholder="Enter last name..."
+        pattern="[A-Za-z]{2,}"
+        title="Letters only, minimum 2 characters"
+        placeholder="e.g. Doe"
         value={lastName}
         onChange={handleChange}
       />

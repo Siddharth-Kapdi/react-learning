@@ -1,14 +1,6 @@
 const StepReview = ({ formData }) => {
   const { firstName, lastName, email, phone, dob, userName, password } = formData
-  // {
-  //   firstName: 'sid',
-  //   lastName: 'kapdi',
-  //   email: 'xyz@gmail.com',
-  //   phone: '9900990090',
-  //   dob: '2005-11-11',
-  //   userName: 'alsiidh23',
-  //   password: 'sldkfjls234',
-  // }
+
   return (
     <div className="review-section section">
       <p className="step-name">Review your Data</p>

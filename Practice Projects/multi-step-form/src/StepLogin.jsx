@@ -10,7 +10,9 @@ const StepLogin = ({ formData, handleChange }) => {
         id="userName"
         required
         autoComplete="off"
-        placeholder="Enter username..."
+        pattern="[a-zA-Z0-9_]{4,20}"
+        title="4-20 characters, letters, numbers, and underscores only"
+        placeholder="e.g. john_doe23"
         value={userName}
         onChange={handleChange}
       />
@@ -21,7 +23,9 @@ const StepLogin = ({ formData, handleChange }) => {
         id="password"
         required
         autoComplete="off"
-        placeholder="Enter password..."
+        pattern="(?=.*[A-Za-z])(?=.*\d).{8,}"
+        title="Minimum 8 characters, at least one letter and one number"
+        placeholder="Min 8 characters, 1 letter & 1 number"
         value={password}
         onChange={handleChange}
       />
