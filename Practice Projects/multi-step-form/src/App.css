@@ -16,14 +16,19 @@ body {
   font-family: 'Noto Sans', sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  background-color: #171717;
+
+  background:
+    radial-gradient(circle at 10% 20%, #34495e 0%, transparent 32%),
+    radial-gradient(circle at 90% 15%, #3f4f3a 0%, transparent 30%),
+    radial-gradient(circle at 50% 100%, #5a4636 0%, transparent 35%),
+    #20252b;
+
+  color: #e7e5e4;
 }
 
 h1 {
   margin-bottom: 1rem;
   text-align: center;
-  background-color: #fff;
-  /* text-decoration: underline; */
   border-radius: .6rem;
 }
 
@@ -34,19 +39,26 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 }
 
-/* .form-container {
-  width: 30%;
-} */
+.form-container {
+  width: 45rem;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+}
 
 .section {
-  width: 45rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 2rem;
-  background-color: #fff;
   border-radius: .6rem;
   margin-bottom: 2rem;
 }
@@ -54,8 +66,6 @@ h1 {
 .step-name {
   font-size: 2.4rem;
   margin-bottom: 2rem;
-  background-color: #000;
-  color: #fff;
   font-weight: 600;
   text-align: center;
   border-radius: .6rem;
@@ -63,18 +73,41 @@ h1 {
 }
 
 label {
-  margin-bottom: .5rem;
+  display: block;
+  font-size: 14px;
+  color: #cbd5e1;
 }
 
 input {
-  height: 3.5rem;
+  width: 100%;
+  padding: 12px 14px;
+  background: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
   margin-bottom: 2rem;
-  font-size: 1.8rem;
-  padding: .5rem;
 }
 
-.next-submit-btn {
-  float: right;
+input::placeholder {
+  color: #64748b;
+}
+
+input:hover {
+  border-color: #475569;
+}
+
+input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.12);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 button {
@@ -85,13 +118,9 @@ button {
   border-radius: .6rem;
   cursor: pointer;
   padding: .5rem 2.5rem;
+  color: #fff;
 
   &:hover {
     opacity: .8;
   }
-}
-
-.error-text {
-  margin: -2rem 0 2rem 0;
-  color: red;
 }

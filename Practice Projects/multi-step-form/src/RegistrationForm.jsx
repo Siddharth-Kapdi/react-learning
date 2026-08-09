@@ -72,12 +72,14 @@ const RegistrationForm = () => {
       {stepCount === 2 && <StepContact formData={formData} handleChange={handleChange} />}
       {stepCount === 3 && <StepLogin formData={formData} handleChange={handleChange} />}
       {stepCount === 4 && <StepReview formData={formData} />}
-      <button type="button" onClick={previousCount}>
-        Previous
-      </button>
-      <button className="next-submit-btn" type="button" onClick={handleButtonClick}>
-        {stepCount === 4 ? 'Submit' : 'Next'}
-      </button>
+      <div className="btn-container">
+        <button type="button" onClick={previousCount}>
+          Previous
+        </button>
+        <button className="next-submit-btn" type="button" onClick={handleButtonClick}>
+          {stepCount === 4 ? 'Submit' : 'Next'}
+        </button>
+      </div>
     </form>
   )
 }
