@@ -1,15 +1,17 @@
 const ResultScreen = ({ score, questions, restartQuiz }) => {
   const getScoreMessage = (score) => {
-    if (score === 5) {
-      return 'Perfect! You got all 5 questions correct!'
-    } else if (score >= 4) {
+    const perc = (score / questions.length) * 100
+
+    if (perc === 100) {
+      return 'Perfect! You got all questions correct!'
+    } else if (perc >= 80) {
       return 'Excellent! You did a great job!'
-    } else if (score >= 3) {
+    } else if (perc >= 60) {
       return 'Good job! Keep practicing!'
-    } else if (score >= 2) {
+    } else if (perc >= 40) {
       return 'Not bad! You can improve with more practice.'
-    } else if (score === 1) {
-      return 'Keep trying! You need more practice.'
+    } else if (perc >= 20) {
+      return 'Keep trying! You are getting there.'
     } else {
       return "Don't give up! Practice and try again."
     }

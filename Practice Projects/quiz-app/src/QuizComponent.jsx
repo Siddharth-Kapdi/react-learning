@@ -6,9 +6,9 @@ import StartScreen from './StartScreen'
 const questions = [
   {
     id: 1,
-    question: 'What is the capital of India?',
-    options: ['Mumbai', 'Delhi', 'Kolkata', 'Chennai'],
-    answer: 'Delhi',
+    question: 'What is the capital of France?',
+    options: ['London', 'Paris', 'Berlin', 'Madrid'],
+    answer: 'Paris',
   },
   {
     id: 2,
@@ -18,21 +18,56 @@ const questions = [
   },
   {
     id: 3,
-    question: 'How many days are in a week?',
-    options: ['5', '6', '7', '8'],
-    answer: '7',
+    question: 'What is 5 × 6?',
+    options: ['20', '25', '30', '35'],
+    answer: '30',
   },
   {
     id: 4,
-    question: 'What is 5 + 5?',
-    options: ['8', '10', '12', '15'],
-    answer: '10',
+    question: 'Which language is used to style web pages?',
+    options: ['HTML', 'CSS', 'JavaScript', 'Python'],
+    answer: 'CSS',
   },
   {
     id: 5,
-    question: 'Which language is used to style web pages?',
-    options: ['HTML', 'CSS', 'Python', 'Java'],
-    answer: 'CSS',
+    question: 'Which is the largest ocean?',
+    options: ['Atlantic', 'Indian', 'Arctic', 'Pacific'],
+    answer: 'Pacific',
+  },
+  {
+    id: 6,
+    question: 'Who wrote Romeo and Juliet?',
+    options: ['Charles Dickens', 'William Shakespeare', 'Mark Twain', 'Leo Tolstoy'],
+    answer: 'William Shakespeare',
+  },
+  {
+    id: 7,
+    question: 'What does HTML stand for?',
+    options: [
+      'Hyper Text Markup Language',
+      'High Text Machine Language',
+      'Hyperlink Text Management Language',
+      'Home Tool Markup Language',
+    ],
+    answer: 'Hyper Text Markup Language',
+  },
+  {
+    id: 8,
+    question: 'Which animal is known as the King of the Jungle?',
+    options: ['Tiger', 'Lion', 'Elephant', 'Leopard'],
+    answer: 'Lion',
+  },
+  {
+    id: 9,
+    question: 'What is the value of 10 + 15?',
+    options: ['20', '25', '30', '35'],
+    answer: '25',
+  },
+  {
+    id: 10,
+    question: 'Which keyword is used to declare a variable in JavaScript?',
+    options: ['var', 'define', 'variable', 'declare'],
+    answer: 'var',
   },
 ]
 

@@ -9,9 +9,14 @@ const QuestionScreen = ({
   setStep,
 }) => {
   const [selected, setSelected] = useState('')
+  const [isRunning, setIsRunning] = useState(false)
+
   const { question, options, answer } = questions[currentQuestionCount]
 
   const handleOptionClick = (e) => {
+    if (isRunning) return
+    setIsRunning(true)
+
     const userChoice = e.currentTarget.textContent
     setSelected(userChoice)
 
@@ -25,7 +30,17 @@ const QuestionScreen = ({
       } else {
         setCurrentQuestionCount((prev) => prev + 1)
       }
+
+      setSelected('')
+      setIsRunning(false)
     }, 1000)
+  }
+
+  const getOptionClass = (option) => {
+    if (!selected) return ''
+    if (option === answer) return 'right'
+    if (option === selected) return 'wrong'
+    return ''
   }
 
   return (
@@ -44,7 +59,7 @@ const QuestionScreen = ({
             {options.map((option, index) => {
               return (
                 <p
-                  className={`option ${selected === option ? (option === answer ? 'right' : 'wrong') : ''}`}
+                  className={`option ${getOptionClass(option)}`}
                   key={`${option}-${index}`}
                   onClick={handleOptionClick}
                 >
