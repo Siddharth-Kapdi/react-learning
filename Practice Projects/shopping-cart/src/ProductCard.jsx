@@ -1,5 +1,6 @@
-const ProductCard = ({ productData }) => {
-  const { name, image, price } = productData
+const ProductCard = ({ product, addItem, inCart }) => {
+  const { name, image, price } = product
+
   return (
     <div className="product-card">
       <div className="product-image">
@@ -8,7 +9,9 @@ const ProductCard = ({ productData }) => {
       <div className="product-details">
         <h3 className="product-name">{name}</h3>
         <p className="product-price">Price - ₹{price}</p>
-        <button className="add-to-cart-btn">Add to cart</button>
+        <button className="add-to-cart-btn" onClick={() => addItem(product)}>
+          {inCart ? 'Added ✓' : 'Add to cart'}
+        </button>
       </div>
     </div>
   )

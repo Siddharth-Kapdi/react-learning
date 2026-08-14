@@ -82,6 +82,7 @@ body {
 
 .cart-row {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   gap: 3rem;
 }
@@ -115,4 +116,9 @@ body {
 .total-price {
   font-size: 1.8rem;
   font-weight: 600;
+}
+
+hr {
+  width: 100%;
+  border-top: 1px solid #333;
 }
