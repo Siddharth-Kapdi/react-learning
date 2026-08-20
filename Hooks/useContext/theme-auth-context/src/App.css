@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #171717;
+  color: #ddd;
+}
+
+.container {
+  width: min(100% - 4rem, 120rem);
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.card {
+  width: 300px;
+  padding: 25px;
+  border-radius: 15px;
+  background: #fff;
+  color: #222;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.card button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #444;
+  color: #fff;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #444;
+}
+
+.profile {
+  width: 300px;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  background: #ffffff;
+  color: #222222;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.profile button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  background: #444;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.profile button:hover {
+  opacity: 0.8;
+}
+
+
+.dark {
+  background: #222;
+  color: white;
+}
