@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import { AuthContext } from '../context/AuthProvider'
 
-const NavBar = () => {
+const ProfileNavBar = () => {
   const { isAuthenticated, logout } = useContext(AuthContext)
 
   return (
@@ -24,27 +24,38 @@ const NavBar = () => {
                     isActive ? `text-blue-500` : `text-white hover:to-blue-500`
                   }
                 >
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/product"
-                  className={({ isActive }) =>
-                    isActive ? `text-blue-500` : `text-white hover:to-blue-500`
-                  }
-                >
-                  Product
+                  Main Home
                 </NavLink>
               </li>
               <li>
                 <NavLink
                   to="/profile"
+                  end={'/profile'}
                   className={({ isActive }) =>
                     isActive ? `text-blue-500` : `text-white hover:to-blue-500`
                   }
                 >
                   Profile
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/profile/wishlist"
+                  className={({ isActive }) =>
+                    isActive ? `text-blue-500` : `text-white hover:to-blue-500`
+                  }
+                >
+                  Wish List
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/profile/checkout"
+                  className={({ isActive }) =>
+                    isActive ? `text-blue-500` : `text-white hover:to-blue-500`
+                  }
+                >
+                  Check Out
                 </NavLink>
               </li>
               <li>
@@ -68,4 +79,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default ProfileNavBar
